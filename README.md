@@ -7,3 +7,13 @@ Higher education platform developed as part of Mini project
 * college_db - connects the college ranks table to the application, to display the colleges
 * masters_pgm_db - connects the program details table to the application (to display on the details page)
 * sql zip file - contains the database to be imported in phpmyadmin, will be updated
+
+
+# TO DO:
+* Events page
+* signup, sign in page
+* profile page
+* Link everything
+* Add style to map and detail page
+* display favorites in profile page
+* create condition that asks a user to login before going to details page
