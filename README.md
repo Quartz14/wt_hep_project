@@ -10,10 +10,10 @@ Higher education platform developed as part of Mini project
 
 
 # TO DO:
-* Events page
-* signup, sign in page
-* profile page
-* Link everything
-* Add style to map and detail page
-* display favorites in profile page
-* create condition that asks a user to login before going to details page
+* Events page 
+* signup, sign in page - DONE (more attractive colors can be used)
+* profile page - DONE (styling required)
+* Link everything - DONE
+* Add style to map and detail page - (only detail page done)
+* display favorites in profile page - DONE
+* create condition that asks a user to login before going to details page - DONE
