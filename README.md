@@ -7,9 +7,14 @@ Higher education platform developed as part of Mini project
 * college_db - connects the college ranks table to the application, to display the colleges
 * masters_pgm_db - connects the program details table to the application (to display on the details page)
 * sql zip file - contains the database to be imported in phpmyadmin, will be updated
+* hep_login, hep_signup, hep_logout - same functionality
+* profile_fav.php - NOT DISPLAYED, used internally to add favorites
+* profile_fav_delete.php - to delete course in favorites list from profile page
+* profile.php - user details page
 
 
 # TO DO:
+* Need to add attractive nav bars and layouts
 * Events page 
 * signup, sign in page - DONE (more attractive colors can be used)
 * profile page - DONE (styling required)
