@@ -9,12 +9,12 @@ if (!isset($_COOKIE['sid'])){
 
     $username = mysqli_real_escape_string($conn, trim($_POST['username']));
     $password = mysqli_real_escape_string($conn, trim($_POST['password']));
-    echo $username;
-    echo $password;
+    //echo $username;
+    //echo $password;
 
 
     if (!empty($username) && !empty($password)){
-      $query = "select username,sid from student_register where username='$username' and password = '$password'";
+      $query = "select username,sid from student_register where username='$username' and password = PASSWORD('$password')";
       $data = mysqli_query($conn, $query);
 
       if (mysqli_num_rows($data) == 1){
@@ -39,30 +39,49 @@ if (!isset($_COOKIE['sid'])){
     }
   }
 }
+else {
+  header("Location: http://localhost/wt_mini_proj/profile.php");
+}
 
  ?>
 </div>
 
   <head>
-    <title>Higher Education Platform</title>
+    <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   </head>
-  <body>
-    <div class="content">
+  <body class="signup">
+    <div class="container">
+      <div class="login-page">
+    <div class="form">
     <h3>Student Log In</h3>
 
-       <div class="form-style-5">
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+    <form id="login" class="login-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
       <fieldset>
-        <legend style="color:black;">Log in</legend>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" value="<?php if (!empty($username)) echo $username; ?>"/><br />
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"/>
+        <div class="input-container">
+          <i class="fa fa-user-circle-o icon"></i>
+          <input type="text" id="username" name="username" placeholder="Enter Username..."/>
+        </div>
+        <div class="input-container">
+          <i class="fa fa-lock icon"></i>
+          <input type="password" id="password" name="password" placeholder="Enter Password..."/>
+        </div>
       </fieldset>
       <input type="submit" name="submit" value="Log In"/>
 
-    </form>
-  </div>
+
+
+<p class="message"><a href='hep_home.html'>Home</a><br></p>
+<p class="message"><a href='hep_signup.php'>New user? Please Signup here</a></p>
+</form>
+</div>
+</div>
 </div>
   </body>
 </html>

@@ -1,8 +1,21 @@
+<?php
+if (!isset($_COOKIE['sid'])){
+  echo '<p class="login"> Please <a href="hep_login.php">log in</a> to access this page<br>';
+echo "<a href='hep_home.html'>Home</a>";}
+else{
+
+  echo '<a href="hep_logout.php">Log Out (' . $_COOKIE['username'] . ')</a><br>';
+  echo "<a href='profile.php'>Profile</a>";
+  echo "<a href='hep_home.html'>Home</a>";
+  include_once 'college_db.php';
+  include_once 'map_form.php';
+}
+
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-		<?php include_once 'college_db.php';?>
-    <?php include_once 'map_form.php'; ?>
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <meta charset="utf-8">
@@ -19,6 +32,8 @@
     </style>
   </head>
   <body>
+
+
     <div id="map"></div>
 
     <script>

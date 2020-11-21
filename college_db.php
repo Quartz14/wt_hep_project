@@ -19,11 +19,11 @@ $college_list = array();
 $lats = array();
 $longs = array();
 
-function filter_mappoints(float $research=10, float $international=10, float $income=10 ,float $teaching=10,int $f_m_ratio=-1,float $avg_tution_py=106601,float $acc_rate=0,float $placement=0, float $living_cost=10500) {
+function filter_mappoints(float $research=10, float $international=10, float $income=10 ,float $teaching=10, float $avg_tution_py=106601,float $acc_rate=0,float $placement=0, float $living_cost=10500) {
   global $conn;
   $sql = "SELECT Score_Rank,University,latitude_college,longitude_college FROM word_university_rank_2020_lat_lon WHERE International_Outlook
   >= '$international' AND Research >= '$research' AND Industry_Income >= '$income' AND
-  Teaching>='$teaching' AND gender_ratio_fm>='$f_m_ratio' AND Avg_tutionfee_per_yr_e <= '$avg_tution_py' AND acc_rate_eng>='$acc_rate' AND Placements_Average_Salary >= '$placement' AND Living_cost_yr<='$living_cost' ";
+  Teaching>='$teaching' AND Avg_tutionfee_per_yr_e <= '$avg_tution_py' AND acc_rate_eng>='$acc_rate' AND Placements_Average_Salary >= '$placement' AND Living_cost_yr<='$living_cost' ";
   $result = $conn->query($sql);
   global $score_rank;
   global $college_list;
