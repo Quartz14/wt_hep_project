@@ -5,9 +5,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/styles_details.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 .fa {
   font-size: 30px;
@@ -19,17 +23,219 @@
 .fa:hover {
   color: red;
 }
+
+
+.heading
+{
+  font-size: 35px;
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+
+body
+{
+  margin:0;
+  padding:0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+
 </style>
 
   </head>
-  <body>
-    Filter: <input type="text" id = "filter_course" name="filter_course" placeholder="Enter course of intrest">
-    Display favorites: <input type="button" name="fav" value="add to favorites" onclick="get_fav()">
+ <body>
+
+  <div id="myNav" class="overlay container">
+        <div class="container">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="heading" href="hep_home.html">HIGHEREDUGUIDE.COM</a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right navbar-header">
+
+                        <li>
+
+                            <a onclick="closeNav()">
+                                <span class="glyphicon glyphicon-remove"></span>
+
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </nav>
+        </div>
+        <div class="overlay-content">
+            <a href="hep_home.html">Home</a>
+            <a href="profile.php">Profile</a>
+            <a href="map.php">Universities</a>
+            <a href="hep_logout.php">Logout</a>
+
+        </div>
+    </div>
+
+    <div id="main">
+
+        <div class="container">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="heading" style="color: #303030;text-decoration:none;" href="hep_home.html">HIGHEREDUGUIDE.COM</a>
+
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right navbar-header">
+
+                        
+                        <li>
+
+                            <a onclick="openNav()">
+                                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class=" hamb">
+
+                    <!--                <a onclick="openNav()">-->
+                    <button data-toggle="collapse" data-target="#navres">
+
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+        <div id="navres" class="collapse">
+            <ul class="nav nav-stacked">
+                <li><a href="hep_home.html">Home</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="map.php">Universities</a></li>
+                <li><a href="hep_logout.php">Logout</a></li>
+            </ul>
+
+        </div>
 
 
 
-    <script>
+        <div class="wrap details">
+            <div class="container-fluid">
 
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                     <label for="filter_course"> Filter: </label><input style="width: 50%;" type="text" class="filter" id = "filter_course" name="filter_course" placeholder="Enter course of intrest">
+
+              <input type="button" id="fav" class="fav" name="fav" value="Add to Favorites" onclick="get_fav()"><label for="fav" class="favlabel">Display favorites:</label>
+                       <br><br><br>
+                    </div>
+                 </div>
+              </div>
+
+
+
+
+<?php
+
+
+
+
+
+
+
+
+if (!isset($_COOKIE['sid'])){
+  echo '<p class="login"> Please <a href="hep_login.php">log in</a> to access this page';}
+else{
+  $query = "select username from student_register where sid='" . $_COOKIE['sid'] ."'";
+  $data = mysqli_query($conn,$query) or die(mysql_error());
+  $row = mysqli_fetch_array($data);
+
+echo"<div class='container-fluid'><div class='row'><div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>";
+
+
+$col_name = $_GET['id'];
+echo "<h2 class='tableheading'> Details for ".$col_name."</h2>";
+$sql = "SELECT program_name, program_type, tution_1_currency, tution_1_money, tuition_price_specification, ielts_score, structure, city, academic_req FROM master_pgm where university_name='$col_name'";
+$result = $conn->query($sql);
+
+if($result) {
+
+
+echo "<div class='table-responsive table-condensed'>
+<table id=courses class='table table-striped'>
+    <thead>
+    <tr>
+        <th class='col-xs-1'> Programme </th>
+        <th class='col-xs-1'> Like </th>
+        <th class='col-xs-1'> IELTS score </th>
+        <th class='col-xs-1'>Tution</th>
+        <th class='col-xs-2' colspan='2'>Courses offered</th>
+        <th class='col-xs-1'>City</th>
+        <th class='col-xs-5'>Academic Requirements</th>
+        </tr>
+        </thead>
+        ";
+echo "<tbody>";
+if($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    //array_push($score_rank, $row['Score_Rank']);
+    //<td colspan='2'>".$row['structure']."</td>
+    //$courses = trim($row['structure'], "[]'");
+    //echo $courses;
+    $courses = explode('\', \'',trim($row['structure'], "[]'"));
+    if(count($courses)<=1) {
+      $courses =array('To be updated');
+    }
+
+    $cities = explode('\', \'',trim($row['city'], "[]'"));
+    if(count($cities)<1) {
+      $cities =array('To be updated');
+    }
+
+
+    echo "<tr>
+            <td>".$row['program_type']." - ".$row['program_name']."</td>
+            <td><i onclick=myFunction(this) class='fa fa-heart'> </i> </td>
+            <td>".$row["ielts_score"]."</td>
+            <td>".$row['tuition_price_specification']."  ".$row["tution_1_money"]." ".$row["tution_1_currency"]."</td>
+            <td colspan='2'> <ul>"."<li>".implode('</li><li>', $courses)."</li>"."</ul></td>
+            <td> <ul>"."<li>".implode('</li><li>', $cities)."</li>"."</ul></td>
+            <td>".substr($row['academic_req'],98,-21)."</td>
+          </tr>";
+
+  }
+  $result -> free_result();
+}
+echo "</tbody>";
+echo "</table></div>";
+}
+else {
+  echo "<br>";
+  echo 'No data';
+}
+}
+
+
+?>
+
+
+
+
+  <script type="text/javascript">
     $(document).ready(function() {
       $("#filter_course").on("keyup", function(){
         var value = $(this).val().toLowerCase();
@@ -87,6 +293,23 @@
                     }
                 });
     }
+  </script>
+
+
+    <script>
+
+    
+
+
+     function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+
 
     </script>
 
@@ -94,123 +317,15 @@
 
 
 
-
+              </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
   </body>
 </html>
 
 
-<?php
 
 
-
-
-
-
-
-
-if (!isset($_COOKIE['sid'])){
-  echo '<p class="login"> Please <a href="hep_login.php">log in</a> to access this page';}
-else{
-  $query = "select username from student_register where sid='" . $_COOKIE['sid'] ."'";
-  $data = mysqli_query($conn,$query) or die(mysql_error());
-  $row = mysqli_fetch_array($data);
-  echo('<p><a href="profile.php">Profile</a></p>');
-  echo '<a href="hep_logout.php">Log Out (' . $_COOKIE['username'] . ')</a><br>';
-  echo "<a href='map.php'>go to map</a><br>";
-  echo "<a href='hep_home.html'>Home</a><br>";
-  //echo '<p>"Welcome ".$farmer_name.</p>';
-
-
-
-
-
-//$score_rank = array();
-
-$col_name = $_GET['id'];
-echo "<h1> Details for ".$col_name."</h1>";
-$sql = "SELECT program_name, program_type, tution_1_currency, tution_1_money, tuition_price_specification, ielts_score, structure, city, academic_req FROM master_pgm where university_name='$col_name'";
-$result = $conn->query($sql);
-
-if($result) {
-
-
-echo "<table id=courses>
-        <th> Programme </th>
-        <th> Like </th>
-        <th> IELTS score </th>
-        <th>Tution</th>
-        <th colspan='2'>Courses offered</th>
-        <th>City</th>
-        <th>Academic Requirements</th>
-        ";
-echo "<tbody>";
-if($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-    //array_push($score_rank, $row['Score_Rank']);
-    //<td colspan='2'>".$row['structure']."</td>
-    //$courses = trim($row['structure'], "[]'");
-    //echo $courses;
-    $courses = explode('\', \'',trim($row['structure'], "[]'"));
-    if(count($courses)<=1) {
-      $courses =array('To be updated');
-    }
-
-    $cities = explode('\', \'',trim($row['city'], "[]'"));
-    if(count($cities)<1) {
-      $cities =array('To be updated');
-    }
-
-
-    echo "<tr>
-            <td>".$row['program_type']." - ".$row['program_name']."</td>
-            <td><i onclick=myFunction(this) class='fa fa-heart'> </i> </td>
-            <td>".$row["ielts_score"]."</td>
-            <td>".$row['tuition_price_specification']."  ".$row["tution_1_money"]." ".$row["tution_1_currency"]."</td>
-            <td colspan='2'> <ul>"."<li>".implode('</li><li>', $courses)."</li>"."</ul></td>
-            <td> <ul>"."<li>".implode('</li><li>', $cities)."</li>"."</ul></td>
-            <td>".substr($row['academic_req'],98,-21)."</td>
-          </tr>";
-/*
-    echo "Programme name: ".$row["program_name"]."  Type: ".$row['program_type'];
-    <?php echo(json_encode($row[program_name]));?>
-    <td><i onclick='like_button(this)' class='fa fa-thumbs-up'></i></td>
-    echo "<br>";
-    echo "tution cost: ".$row["tution_1_money"]." ".$row["tution_1_currency"]. "  ".$row['tuition_price_specification'];
-    echo "<br>";
-    echo "IELTS score required: ".$row["ielts_score"];
-    echo "<br>";
-    echo "Courses offered: ". $row['structure'];
-    echo "<br>";
-    echo "City:  ".$row['city'];
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    <script>
-    function like_button(x) {
-      //x.classList.toggle("fa-thumbs-down");
-      if (document.heart.src=='icons/heart-regular.svg'){
-        document.heart.src='icons/heart-solid.svg';}
-      else if (document.heart.src=='icons/heart-solid.svg'){
-        document.heart.src='icons/heart-regular.svg';
-      }
-      //x.css("color", "green");
-
-    }
-
-    </script>
-    */
-  }
-  $result -> free_result();
-}
-echo "</tbody>";
-echo "</table>";
-}
-else {
-  echo "<br>";
-  echo 'No data';
-}
-}
-
-
-?>

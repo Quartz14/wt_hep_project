@@ -459,7 +459,6 @@
 
 
 
-/*===========login/register css==============*/
 .login-page {
   width: 100%;
   padding: 8% 0 0;
@@ -548,4 +547,278 @@
   font-family: 'PT Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
+}
+
+
+.profile-image,
+    .img {
+        display: block;
+        background-image: url(../images/bg11.jpg);
+        height: 350px;
+        width: 100%;
+        background-size: cover;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.profile-content
+{
+    background: #C2CED5;
+
+}
+
+.row
+{
+    box-sizing: border-box;
+}
+
+.info
+{
+  position: relative;
+  background: #E7E7E7;
+  margin: 10px 0px 0px 10px;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  padding: 45px;
+  text-align: center;
+  /*box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);*/
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #38464B;
+}
+
+.courses
+{
+    text-align: left;
+}
+
+h1,h3,h5,h4,h2
+{
+    font-family: 'PT Sans', sans-serif;
+    
+
+}
+
+.deadline
+{
+    color: #38464B;
+}
+section>h3,section>h5
+{
+    color: #38464B;
+    font-weight: bold;
+}
+
+.info button
+{
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #678088;
+  width: 50%;
+  border: 0;
+  padding: 5px;
+  color: #FFFFFF;
+  font-size: 12px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.info button:hover,.form button:active,.form button:focus {
+  background: #38464B;
+}
+
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+}
+
+li>label
+{
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
+    color: #38464B;
+}
+
+section>ul
+{
+    text-align: left
+}
+
+input[type='checkbox']:checked {
+    filter: brightness(50%) opacity(50%);
+}
+
+
+ @media only screen and (min-width: 1300px) {
+        .profile-image
+        {
+            height:400px;
+            padding: 0px;
+        }
+    }
+     @media only screen and (max-width: 1100px) {
+        .profile-image
+        {
+            height:300px;
+            padding: 0px;
+        }
+    }
+    @media only screen and (max-width: 1000px) {
+        .profile-image
+        {
+            height:250px;
+            padding: 0px;
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        .profile-image
+        {
+            height:200px;
+            padding: 0px;
+        }
+    }
+    @media only screen and (max-width: 650px) {
+        .profile-image
+        {
+            height:175px;
+            padding: 0px;
+        }
+    }
+     @media only screen and (max-width: 550px) {
+        .profile-image
+        {
+            height:150px;
+            padding: 0px;
+        }
+    }
+     @media only screen and (max-width: 500px) {
+        .profile-image
+        {
+            height:125px;
+            padding: 0px;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        .profile-image
+        {
+            height:100px;
+            padding: 0px;
+        }
+    }
+     @media only screen and (max-width: 300px) {
+        .profile-image
+        {
+            height:75px;
+            padding: 0px;
+        }
+    }
+
+
+.select
+{
+    margin: 20px 5px 20px 5px;
+    font-size: 15px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+select
+{
+    width:70%;
+    padding:5px;
+    border-radius: 2px;
+    background: #D3DDE9;
+    border-color: #D3DDE9;
+}
+
+select:hover
+{
+    border: 2px solid #678088;
+}
+
+
+.general
+{
+  position: relative;
+  background:  #E7E7E7;
+  width: 100%;
+  margin: 20px auto 0px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  color: #38464B;
+}
+
+
+
+
+
+
+table
+{
+    text-align: center;
+}
+
+thead
+{
+
+    color: white;
+    background: #38464B;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+
+}
+th
+{
+    
+    font-size:20px;
+    font-weight: bold;
+    text-align: center;
+}
+tbody
+{
+    background-color: #B8B8B8;
+}
+
+.tableheading
+{
+    text-align: center;
+    color:#38464B;
+}
+
+.details
+{
+    background: #DBDBDB;
+}
+
+.filter
+{
+    height:0.5em;
+    width:50%;
+    margin:10px;
+    border-radius: 5px;
+}
+
+.fav
+{
+    margin:10px;
+    background-color: #38464B;
+    height:2em;
+    color: white;
+    padding: 5px 20px 25px 20px;
+    padding-bottom: 25px;
+    text-align: center;
+    border-radius: 10px;
+    float: right;
+}
+
+.favlabel
+{
+    float:right;
+    margin:15px;
 }
