@@ -1,7 +1,11 @@
 <?php
 if (!isset($_COOKIE['sid'])){
-  echo '<p class="login"> Please <a href="hep_login.php">log in</a> to access this page<br>';
-echo "<a href='hep_home.html'>Home</a>";}
+  echo'<div class="container-fluid">
+      <div class="row"><div class="col-xs-12"';
+  echo '<h3 class="login" style="text-align:center;"> Please <a href="hep_login.php">log in</a> to access this page</h3><br><br>';
+echo "<div class='col-xs-12'><a href='hep_home.html'>Home</a></div>";
+echo'</div></div></div>';
+}
 else{
 
   echo'    
