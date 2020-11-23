@@ -4,9 +4,55 @@ if (!isset($_COOKIE['sid'])){
 echo "<a href='hep_home.html'>Home</a>";}
 else{
 
-  echo '<a href="hep_logout.php">Log Out (' . $_COOKIE['username'] . ')</a><br>';
-  echo "<a href='profile.php'>Profile</a>";
-  echo "<a href='hep_home.html'>Home</a>";
+  echo'    
+    <div id="main">
+
+        <div class="container">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="mapnav" href="hep_home.html">HIGHEREDUGUIDE.COM</a>
+
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right navbar-header">
+
+                        <li class="nav-item dropdown" >
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             <span class="glyphicon glyphicon-menu-hamburger"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding:10px;">
+                                <a style="margin:10px;border:transparent;border-radius: 0px;width:100%;" class="dropdown-item" href="hep_home.html">Home</a>
+                                 <div class="dropdown-divider"></div>
+                                <a style="margin:10px;border:transparent;border-radius: 0px;width:100%;" class="dropdown-item" href="profile.php">Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a style="margin:10px;border:transparent;border-radius: 0px;width:100%;" class="dropdown-item" href="hep_logout.php">Logout</a>
+                                </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class=" hamb">
+                    <button data-toggle="collapse" data-target="#navres">
+
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+        <div id="navres" class="collapse">
+            <ul class="nav nav-stacked">
+                <li><a href="hep_home.html">Home</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="hep_logout.php">Logout</a></li>
+            </ul>
+
+        </div>';
+
   include_once 'college_db.php';
   include_once 'map_form.php';
 }
@@ -17,24 +63,33 @@ else{
   <head>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <title>Map</title>
     <style>
       #map {
         position: absolute;
-        top: 300px;
+        top: 45%;
         bottom: 0;
-        left:500px;
+        left:50%;
         right:0;
+        width:50%;
+        height: 100%;
       }
-
     </style>
   </head>
   <body>
+      <div class="container-fluid">
+      <div class="row">
+        <div id="map"></div>
+      </div>
+    </div>
 
-
-    <div id="map"></div>
 
     <script>
 
@@ -75,5 +130,24 @@ else{
 
       create_map();
     </script>
+
+     <script>
+
+
+        
+
+
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+
+        
+    </script>
+
   </body>
 </html>
