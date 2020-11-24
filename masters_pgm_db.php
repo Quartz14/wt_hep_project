@@ -137,7 +137,7 @@ body
 
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                     <label for="filter_course"> Filter: </label><input style="width: 50%;" type="text" class="filter" id = "filter_course" name="filter_course" placeholder="Enter course of intrest">
+                     <label for="filter_course"> Filter: </label><input style="width: 50%;" type="text" class="filter" id = "filter_course" name="filter_course" placeholder="Enter course of interest">
 
               <input type="button" id="fav" class="fav" name="fav" value="Add to Favorites" onclick="get_fav()"><label for="fav" class="favlabel">Display favorites:</label>
                        <br><br><br>
