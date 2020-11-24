@@ -16,8 +16,11 @@ Higher education platform developed as part of Mini project
 
 
 # TO DO:
-* Make site responsive
-* Need to add attractive nav bars and layouts
+* Make site responsive to change in screen size
+* Update Home page
+* Add link to about page, and if its not a page, remove it from nav options
 * Events page 
-* profile page
-* Add style to map page and profile_fav_delete.php (basic background and navbar sufficient)
+
+* User ease of use related changes:
+  ** make nav bar horizontal in profile, map page, delete favorites page
+  * remove location and details from profile footer
