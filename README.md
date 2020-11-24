@@ -22,5 +22,5 @@ Higher education platform developed as part of Mini project
 * Events page 
 
 * User ease of use related changes:
-  ** make nav bar horizontal in profile, map page, delete favorites page
+  * make nav bar horizontal in profile, map page, delete favorites page
   * remove location and details from profile footer
