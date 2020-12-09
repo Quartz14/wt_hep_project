@@ -8,54 +8,31 @@ echo'</div></div></div>';
 }
 else{
 
-  echo'    
-    <div id="main">
-
-        <div class="container">
-            <nav class="navbar">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="mapnav" href="hep_home.html">HIGHEREDUGUIDE.COM</a>
-
-                    </div>
-
-                    <ul class="nav navbar-nav navbar-right navbar-header">
-
-                        <li class="nav-item dropdown" >
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                             <span class="glyphicon glyphicon-menu-hamburger"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding:10px;">
-                                <a style="margin:10px;border:transparent;border-radius: 0px;width:100%;" class="dropdown-item" href="hep_home.html">Home</a>
-                                 <div class="dropdown-divider"></div>
-                                <a style="margin:10px;border:transparent;border-radius: 0px;width:100%;" class="dropdown-item" href="profile.php">Profile</a>
-                                <div class="dropdown-divider"></div>
-                                <a style="margin:10px;border:transparent;border-radius: 0px;width:100%;" class="dropdown-item" href="hep_logout.php">Logout</a>
-                                </div>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class=" hamb">
-                    <button data-toggle="collapse" data-target="#navres">
-
-                        <span class="glyphicon glyphicon-menu-hamburger"></span>
-                    </button>
-
-                </div>
-
-            </nav>
-
-        </div>
-
-        <div id="navres" class="collapse">
-            <ul class="nav nav-stacked">
-                <li><a href="hep_home.html">Home</a></li>
-                <li><a href="profile.php">Profile</a></li>
-                <li><a href="hep_logout.php">Logout</a></li>
-            </ul>
-
-        </div>';
+  echo'<div class="container">
+  <nav class="navbar navbar-expand-lg">
+      <div class="navbar-header">
+            <a class="mapnav" href="hep_home.html">HIGHEREDUGUIDE.COM</a>
+            <div class=" hamb">
+        <button data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="glyphicon glyphicon-menu-hamburger visible-xs"></span>
+                </button>
+      </div>
+      </div>
+    <div class="collapse navbar-collapse newnavtop" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto nav nav-stack newnav" style="float: right; margin-top: 1%;">
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius: 0px;border:none; padding:10px;" href="hep_home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius: 0px;border:none;padding:10px;" href="profile.php">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius: 0px;border:none;padding:10px;" href="hep_logout.php">Logout</a>
+            </li>
+        </ul>
+      </div>
+  </nav>
+</div>';
 
   include_once 'college_db.php';
   include_once 'map_form.php';

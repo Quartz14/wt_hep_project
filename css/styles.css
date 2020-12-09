@@ -900,3 +900,28 @@ p
 }
 
 
+
+.newnav>li>a
+{
+   color: #959595;
+}
+
+.newnav>li>a:hover,.newnav>li>a:active, .newnav>li>a:focus 
+{
+    color: #000000;
+    background: #ddd;
+}
+
+@media (max-width: 768px)
+{
+    .newnav
+    {
+        width: 100%;
+        text-align: center;
+    }
+    .newnav>li>a:hover
+    {
+        background: #ddd;
+        color: black;
+    }
+}

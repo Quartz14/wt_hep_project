@@ -29,7 +29,7 @@
 {
   font-size: 35px;
   font-family: 'PT Sans', sans-serif;
-  color: white;
+  color: #303030;
     letter-spacing: -1px;
     font-weight: bold;
 }
@@ -52,85 +52,34 @@ body
   </head>
  <body>
 
-  <div id="myNav" class="overlay container">
-        <div class="container">
-            <nav class="navbar">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="heading" href="hep_home.html">HIGHEREDUGUIDE.COM</a>
-                    </div>
-
-                    <ul class="nav navbar-nav navbar-right navbar-header">
-
-                        <li>
-
-                            <a onclick="closeNav()">
-                                <span class="glyphicon glyphicon-remove"></span>
-
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-
-            </nav>
-        </div>
-        <div class="overlay-content">
-            <a href="hep_home.html">Home</a>
-            <a href="profile.php">Profile</a>
-            <a href="map.php">Universities</a>
-            <a href="hep_logout.php">Logout</a>
-
-        </div>
-    </div>
-
-    <div id="main">
-
-        <div class="container">
-            <nav class="navbar">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="heading" style="color: #303030;text-decoration:none;" href="hep_home.html">HIGHEREDUGUIDE.COM</a>
-
-                    </div>
-
-                    <ul class="nav navbar-nav navbar-right navbar-header">
-
-                        
-                        <li>
-
-                            <a onclick="openNav()">
-                                <span class="glyphicon glyphicon-menu-hamburger"></span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class=" hamb">
-
-                    <!--                <a onclick="openNav()">-->
-                    <button data-toggle="collapse" data-target="#navres">
-
-                        <span class="glyphicon glyphicon-menu-hamburger"></span>
-                    </button>
-
-                </div>
-
-            </nav>
-
-        </div>
-
-        <div id="navres" class="collapse">
-            <ul class="nav nav-stacked">
-                <li><a href="hep_home.html">Home</a></li>
-                <li><a href="profile.php">Profile</a></li>
-                <li><a href="map.php">Universities</a></li>
-                <li><a href="hep_logout.php">Logout</a></li>
-            </ul>
-
-        </div>
-
-
+<div class="container">
+  <nav class="navbar navbar-expand-lg">
+      <div class="navbar-header">
+            <a class="heading" href="hep_home.html">HIGHEREDUGUIDE.COM</a>
+            <div class=" hamb">
+        <button data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="glyphicon glyphicon-menu-hamburger visible-xs"></span>
+                </button>
+      </div>
+      </div>
+    <div class="collapse navbar-collapse newnavtop" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto nav nav-stack newnav" style="float: right; margin-top: 1%;">
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius: 0px;border:none; padding:10px;" href="hep_home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius: 0px;border:none; padding:10px;" href="profile.php">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius: 0px;border:none;padding:10px;" href="map.php">Universities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="border-radius: 0px;border:none;padding:10px;" href="hep_logout.php">Logout</a>
+            </li>
+        </ul>
+      </div>
+  </nav>
+</div>
 
         <div class="wrap details">
             <div class="container-fluid">
