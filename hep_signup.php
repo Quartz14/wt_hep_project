@@ -6,6 +6,25 @@
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style type="text/css">
+    input[type="submit"] {
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #574F4F;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+input[type="submit"]:hover,input[type="submit"]:active,input[type="submit"]:focus {
+  background: #382F2F;
+}
+</style>
 </head>
 <body class="signup">
 <div class="container">
@@ -108,10 +127,10 @@ include_once 'db_connect.php';
         </div>
         <div class="input-container">
           <i class="fa fa-graduation-cap icon"></i>
-           <input type="number" id="cgpa" name="cgpa" min="0" max="10" step="0.01" placeholder="Enter CGPA..."/>
+           <input type="number" class="cgpa" id="cgpa" name="cgpa" min="0" max="10" step="0.01" placeholder="Enter CGPA..."/>
         </div>
       </fieldset>
-      <input type="submit" name="submit" value="Sign up">
+      <input type="submit" class="registerbutton" name="submit" value="Sign up">
 
     </form>
     <p class="message"><a href='hep_home.html'>Home</a><br></p>

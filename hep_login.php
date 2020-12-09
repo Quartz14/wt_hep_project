@@ -53,6 +53,25 @@ else {
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style type="text/css">
+    input[type="submit"] {
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #574F4F;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+input[type="submit"]:hover,input[type="submit"]:active,input[type="submit"]:focus {
+  background: #382F2F;
+}
+  </style>
 
   </head>
   <body class="signup">
@@ -73,7 +92,7 @@ else {
           <input type="password" id="password" name="password" placeholder="Enter Password..."/>
         </div>
       </fieldset>
-      <input type="submit" name="submit" value="Log In"/>
+      <input type="submit" class="registerbutton" name="submit" value="Log In"/>
 
 
 
