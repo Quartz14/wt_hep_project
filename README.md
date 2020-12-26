@@ -5,15 +5,15 @@ As part of Computer Science Engineering coursework, under Visvesvaraya Technolog
 
 Application screen shots:
 1. Home page
-![Home page] (mini_proj/home.PNG)
+![Home page](mini_proj/home.PNG)
 2. Profile page
-![profile page] (mini_proj/profile.PNG)
+![profile page](profile.PNG)
 3. University search page
-![university page] (mini_proj/map3.PNG)
+![university page](mini_proj/map3.PNG)
 4. Course details page
-![course page] (mini_proj/details_selectfav.PNG)
+![course page](mini_proj/details_selectfav.PNG)
 5. Upcomming Events page
-![events page] (mini_proj/events_crop.PNG)
+![events page](mini_proj/events_crop.PNG)
 
 
 Files: 
