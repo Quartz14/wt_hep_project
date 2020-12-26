@@ -1,5 +1,5 @@
-# wt_hep_project
-Higher education platform developed as part of Mini project
+# Higher Education Platform
+Online Higher education management platform developed as part of Mini project
 
 As part of Computer Science Engineering coursework, under Visvesvaraya Technological University (VTU), a web application using PHP, Javascript, HTML is developed
 
