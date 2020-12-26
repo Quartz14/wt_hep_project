@@ -1,7 +1,22 @@
 # wt_hep_project
 Higher education platform developed as part of Mini project
 
+As part of Computer Science Engineering coursework, under Visvesvaraya Technological University (VTU), a web application using PHP, Javascript, HTML is developed
 
+Application screen shots:
+1. Home page
+![Home page] (mini_proj/home.PNG)
+2. Profile page
+![profile page] (mini_proj/profile.PNG)
+3. University search page
+![university page] (mini_proj/map3.PNG)
+4. Course details page
+![course page] (mini_proj/details_selectfav.PNG)
+5. Upcomming Events page
+![events page] (mini_proj/events_crop.PNG)
+
+
+Files: 
 * map.php - contains code for displaying the map
 * map_form.php - contains code to display the form and filter colleges, to display on the map
 * college_db.php - connects the college ranks table to the application, to display the colleges
@@ -14,13 +29,3 @@ Higher education platform developed as part of Mini project
 * hep_home.html - updated home page with links
 * db_connect.php - contains the data required to connect to the database. It can be include in any php file, to reduce repeted code
 
-
-# TO DO:
-* Make site responsive to change in screen size
-* Update Home page
-* Add link to about page, and if its not a page, remove it from nav options
-* Events page 
-
-* User ease of use related changes:
-  * make nav bar horizontal in profile, map page, delete favorites page
-  * remove location and details from profile footer
