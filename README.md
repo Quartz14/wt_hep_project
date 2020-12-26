@@ -7,13 +7,13 @@ Application screen shots:
 1. Home page
 ![Home page](mini_proj/home.PNG)
 2. Profile page
-![profile page](profile.PNG)
+![profile page](mini_proj/profile.PNG)
 3. University search page
 ![university page](mini_proj/map3.PNG)
 4. Course details page
 ![course page](mini_proj/details_selectfav.PNG)
 5. Upcomming Events page
-![events page](mini_proj/events_crop.PNG)
+![events page](mini_proj/events_crop.png)
 
 
 Files: 
